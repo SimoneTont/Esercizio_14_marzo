@@ -1,6 +1,6 @@
 progetto14marzo/public/esercizio -> Lista Progetti e "pagina principale" dell'esercizio
 
-/details -> Dettagli di un progetto (Attività e user collegato)
+/details -> Dettagli di un progetto (Attività e utente collegato)
 
 /create -> Crea un nuovo progetto
 
