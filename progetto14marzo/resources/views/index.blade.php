@@ -12,6 +12,8 @@
     <div class="container">
         <h1 class="mt-5 mb-4">Projects List</h1>
 
+        <a href="{{ route('projects.create') }}" class="btn btn-success mb-3">Create New Project</a>
+        
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
