@@ -23,11 +23,10 @@
                 <input type="text" class="form-control" id="name" name="name">
             </div>
             <!-- Dynamically generating ID -->
-            <input type="hidden" name="id" value="{{ uniqid() }}">
+            <input type="hidden" name="id" value="{{ $newProjectId }}">
             <button type="submit" class="btn btn-primary">Create Project</button>
         </form>
     </div>
 </body>
 
 </html>
-

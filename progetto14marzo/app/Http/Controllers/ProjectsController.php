@@ -21,9 +21,12 @@ class ProjectsController extends Controller
     }
 
     public function create()
-    {
-        // Da fare
-    }
+{
+    $latestProjectId = Project::max('id');
+    $newProjectId = $latestProjectId + 1;
+
+    return view('create', ['newProjectId' => $newProjectId]);
+}
 
     public function store(Request $request)
     {
