@@ -30,22 +30,20 @@ class ProjectsController extends Controller
     return view('create', ['newProjectId' => $newProjectId]);
 }
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-        ]);
+public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+    ]);
 
-        $project = new Project();
-        $project->name = $validatedData['name'];
-        $project->save();
+    $project = new Project();
+    $project->name = $validatedData['name'];
+    $project->user_id = Auth::id();
+    $project->save();
 
-        if ($request->has('activities')) {
-            $project->activities()->attach($request->input('activities'));
-        }
+    return redirect()->route('projects.index')->with('success', 'Project created successfully!');
+}
 
-        return redirect()->route('index')->with('success', 'Project created successfully!');
-    }
 
     public function edit($id)
     {
